@@ -1,0 +1,41 @@
+<Doctype html>
+<html>
+<head>
+<Meta charset="utf-8">
+<title> Strona zaliczeniowa JS </title>
+ <script language="JavaScript">
+  function okno_zamknij_flisikowski()
+ {
+ window.close()
+ }
+ </script>
+</head>
+<body>
+<textarea cols="205" rows="20">
+<html>
+ <head>
+ <script type="text/javascript">
+ function Autobus(Start_k,Numer_k,Koniec_k)//początek konstruktora
+{
+this.Start=Start_k;
+this.Numer=Numer_k;
+this.Koniec=Koniec_k;
+}//koniec konstruktora
+ Autobus.prototype.wypisz_Flisikowski = function () //definicja metody
+ {
+ alert(this.Start + ' ' + this.Numer+ ' ' + this.Koniec);
+ };
+var Autobus1 = new Autobus("Gdynia", "297", "Wejherowo"); // nowy obiekt Autobus1
+var Autobus2 = new Autobus('Pruszcz Gd', '251', 'Gdansk');
+Autobus1.wypisz_Flisikowski(); // uruchomienie metody wypisz() dotyczącej Autobus1
+Autobus2.wypisz_Flisikowski();
+ document.write("dostęp do właściwości"+"<br>");
+// poniżej dostęp do pól autobus1
+ document.write("autobus pierwszy"+" "+Autobus1.Start+" "+Autobus1.Numer+" "+Autobus1.Koniec);
+ </script>
+ </head>
+<body>
+<br>
+ programowanie obiektowe
+</body>
+</html>
