@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_Flisikowski()
+ {
+ window.close()
+ }
+8
+ </script>
+</head>
+<body>
+ <form>
+
+<textarea name="Flisikowski" cols="80" rows="25" disabled>
+  <!DOCTYPE html>
+<html>
+<head>
+    <title>Sprawdzenie znajomosci roku JavaScript</title>
+    <script>
+        function checkYear() {
+            var input = prompt("Podaj rok, od ktorego działa JavaScript", "");
+            var year = parseInt(input);
+
+            if (year === 1995) {
+                document.write('<h1 style="color: blue; font-size: 4;">Brawo, znasz rok od kiedy dziala JavaScript</h1><br />');
+            } else {
+                document.write('<h1 style="color: red; font-size: 7;">Zle, musisz jeszcze poczytac</h1><br />');
+            }
+
+            document.write('<p>Wczytany rok = ' + year + '</p>');
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" name="sprawdz" value="Sprawdz" onclick="checkYear()" />
+
+</body>
+</html>
+
+</textarea>
