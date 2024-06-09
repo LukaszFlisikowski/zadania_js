@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+  
+    <style>
+        .green {
+            color: green;
+        }
+        .blue {
+            color: blue;
+            font-size: 50%;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var liczba1 = parseInt(prompt("Podaj pierwszą liczbę:"));
+        var liczba2 = parseInt(prompt("Podaj drugą liczbę:"));
+
+        
+        function wypiszLiczbyNieparzyste(start, end) {
+            var output = "";
+
+           
+            var colorClass = (start < end) ? "green" : "blue";
+
+           
+            for (var i = Math.min(start, end) + 1; i < Math.max(start, end); i++) {
+                if (i % 2 !== 0) {
+                    output += '<span class="' + colorClass + '">' + i + '</span> ';
+                }
+            }
+
+            return output;
+        }
+
+        
+        if (liczba1 < liczba2) {
+           
+            var result = wypiszLiczbyNieparzyste(liczba1, liczba2);
+        } else if (liczba1 > liczba2) {
+            
+            var result = wypiszLiczbyNieparzyste(liczba1, liczba2).replace(/green/g, "blue");
+        } else {
+            
+            var result = "Podane liczby są równe.";
+        }
+
+        if (result !== "Podane liczby są równe.") {
+            document.write(result);
+        } else {
+            confirm(result);
+        }
+    </script>
+</body>
+</html>
