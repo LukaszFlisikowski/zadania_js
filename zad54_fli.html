@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+  
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var imie = prompt("Podaj swoje imię:");
+        var nazwisko = prompt("Podaj swoje nazwisko:");
+
+     
+        var a = (nazwisko.length % 4) + 5;
+        var b = (imie.length % 6) + 20;
+      
+        var result = "";
+
+        for (var i = 0; i < b; i++) {
+            result += "*";
+        }
+        result += "<br>";
+
+        for (var i = 0; i < a - 2; i++) {
+            result += "*";
+            for (var l = 0; j < b - 2; l++) {
+                result += "&nbsp;";
+            }
+            result += "*<br>";
+        }
+
+        
+        for (var i = 0; i < b; i++) {
+            result += "*";
+        }
+
+        
+        document.write(result);
+    </script>
+</body>
+</html>
