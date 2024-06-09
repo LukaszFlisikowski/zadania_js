@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+ <head> 
+ <title>Sprawdzenie danych Flisikowski </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+<div style="color:red;font-size:50px;">
+ <script language="JavaScript">
+ do {
+var licz1_fli=prompt("wysokość=","");
+ var h_fli=parseFloat(licz1_fli);
+ }
+ while ( h_fli<=0);
+ do {
+var licz1_fli=prompt("podstawę=","");
+ var a_fli=parseFloat(licz1_fli);
+ }
+ while(!( a_fli>0));
+var Pole_fli=a_fli*h_fli/2;
+ document.write("Pole="+Pole_fli.toFixed(2)+" cm^2"+"<br>");
+ </script>
+</div>
+</body>
+</html>
