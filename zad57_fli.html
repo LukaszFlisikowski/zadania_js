@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+ 
+</head>
+<body>
+    <script type="text/javascript">
+       
+        function pierwiastekCzwarty(x) {
+            return Math.sqrt(Math.sqrt(x));
+        }
+
+        
+        function drukujWyniki(dziennik) {
+            var stop = dziennik + 15;
+
+            for (var i = dziennik; i < stop; i++) {
+                var pierwiastekDrugi = Math.sqrt(i).toFixed(2);
+                var pierwiastekCzwartyWynik = pierwiastekCzwarty(i).toFixed(2);
+                document.write("I=" + i + " pierw_2(" + i + ")=" + pierwiastekDrugi + " pierw_4(" + i + ")=" + pierwiastekCzwartyWynik + "<br>");
+
+               
+                if ((i - dziennik + 1) % 3 === 0) {
+                    if (!confirm("Aby kontynuować, naciśnij dowolny klawisz.")) {
+                        break;
+}
+ }
+ }
+ }
+        var numerWdzienniku = 8; 
+        drukujWyniki(numerWdzienniku);
+    </script>
+</body>
+</html>
