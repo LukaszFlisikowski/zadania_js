@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Liczby pierwsze z użyciem wzoru</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Funkcja sprawdzająca czy liczba jest pierwsza
+        function czyPierwsza(liczba) {
+            if (liczba < 2) return false;
+            for (var i = 2; i <= Math.sqrt(liczba); i++) {
+                if (liczba % i === 0) return false;
+            }
+            return true;
+        }
+
+        // Funkcja obliczająca wartość wielomianu
+        function wielomian(i) {
+            return i * i + i + 41;
+        }
+
+        // Znalezienie 40 liczb pierwszych
+        var liczbyPierwsze = [];
+        var count = 0;
+        for (var i = 0; count < 40; i++) {
+            var wynik = wielomian(i);
+            if (czyPierwsza(wynik)) {
+                liczbyPierwsze.push({i: i, wynik: wynik});
+                count++;
+            }
+        }
+
+        // Wyświetlenie wyników zatrzymując ekran po pięciu liniach
+        for (var i = 0; i < liczbyPierwsze.length; i++) {
+            document.write("i=" + liczbyPierwsze[i].i + " w(" + liczbyPierwsze[i].i + ")=" + liczbyPierwsze[i].wynik + "<br>");
+            if ((i + 1) % 5 === 0 && i !== liczbyPierwsze.length - 1) {
+                if (!confirm("Aby kontynuować, naciśnij dowolny klawisz.")) {
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
