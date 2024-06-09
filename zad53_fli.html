@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var a_fli = parseInt(prompt("Podaj wysokość prostokąta (a):"));
+        var b_fli = parseInt(prompt("Podaj szerokość prostokąta (b):"));
+
+        for (var i = 0; i < b_fli; i++) {
+            document.write("*");
+        }
+        document.write("<br>");
+
+        var wiersz_fli = "*";
+        for (var i = 1; i <= (b_fli - 2); i++) {
+            wiersz_fli += "&nbsp&nbsp";
+        }
+        wiersz_fli += "*";
+
+        for (var l = 0; l < a_fli - 2; l++) {
+            document.write(wiersz_fli + "<br>");
+        }
+
+        for (var i = 0; i < b_fli; i++) {
+            document.write("*");
+        }
+    </script>
+</body>
+</html>
