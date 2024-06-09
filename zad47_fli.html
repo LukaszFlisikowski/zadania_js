@@ -1,34 +1,21 @@
 ﻿<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-
-</head>
+ <head> 
+ <title>Sprawdzenie danych Flisikowski </title> 
+ <meta charset="utf-8"> 
+ </head> 
 <body>
-    <script type="text/javascript">
-       
-        var a = parseFloat(prompt("Podaj długość a"));
-        var b = parseFloat(prompt("Podaj długość b"));
-        var c = parseFloat(prompt("Podaj długość c"));
-
-       
-        function isTriangle(a, b, c) {
-         
-            if (a > 0 && b > 0 && c > 0) {
-            
-                if ((a + b > c) && (a + c > b) && (b + c > a)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-     
-        if (isTriangle(a, b, c)) {
-            alert("Podane boki tworzą trójkąt.");
-        } else {
-            alert("Podane boki nie tworzą trójkąta.");
-        }
-    </script>
+<div style="color:red;font-size:50px;">
+ <script language="JavaScript">
+ do {
+ var a_fli=parseFloat(prompt("a=",""));
+  var b_fli=parseFloat(prompt("b=",""));
+   var c_fli=parseFloat(prompt("c=",""));
+   document.write("Trojkat sie nie zamyka"+"<br>");
+ }
+  
+ while(!((a_fli>0)&&(b_fli>0)&&(c_fli>0)&&(a+b>c)&&(a+c>b)&&(b+c>a)));
+ document.write("Trojkat sie zamyka"+"<br>");
+ </script>
+</div>
 </body>
 </html>
