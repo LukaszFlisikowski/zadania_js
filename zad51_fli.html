@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="utf-8">
+ <title> Przykład użycia pętli </title>
+</head>
+<body>
+  <script language="JavaScript">
+    var iloscPowtorzen = prompt("Podaj liczbę powtórzeń:");
+    var tekstPowtarzany = prompt("Podaj treść powtarzanego tekstu:");
+
+    for (var i = 1; i <= iloscPowtorzen; i++) {
+      for (var k = 1; k <= i; k++) {
+        document.write("&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;");
+      }
+      document.write(i + "_" + tekstPowtarzany + "_" + i + "<br>");
+    }
+  </script>
+</body>
+</html>
