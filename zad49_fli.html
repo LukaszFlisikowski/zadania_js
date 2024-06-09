@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+   
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var n_fli = parseInt(prompt("Podaj liczbę n:"));
+
+       
+        var silnia_fli = 1;
+        if (n_fli > 0) {
+            for (var i = 1; i <= n_fli; i++) {
+                silnia_fli *= i;
+            }
+        }
+        document.write("n = " + n_fli + "<br>");
+        document.write(n_fli + "! = " + silnia_fli);
+    </script>
+</body>
+</html>
