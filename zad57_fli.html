@@ -1,35 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
- 
+  <meta charset="utf-8" />
+  <title></title>
 </head>
 <body>
-    <script type="text/javascript">
-       
-        function pierwiastekCzwarty(x) {
-            return Math.sqrt(Math.sqrt(x));
+  <input id="btn" type="button" value="nacisnij dla poczatku" onclick="findPrimes()">
+  <div id="aa"></div>
+  <script>
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    async function findPrimes() {
+      const field = document.getElementById("aa");
+      let buffer = '';
+      for (let i = 8; i < 23; i++) {
+        if (i !== 0 && i % 8 === 0) {
+          await wait(300);
+          field.innerHTML += buffer;
+          buffer = '';
+          alert('nacisnij zeby kontynuowac');
         }
-
-        
-        function drukujWyniki(dziennik) {
-            var stop = dziennik + 15;
-
-            for (var i = dziennik; i < stop; i++) {
-                var pierwiastekDrugi = Math.sqrt(i).toFixed(2);
-                var pierwiastekCzwartyWynik = pierwiastekCzwarty(i).toFixed(2);
-                document.write("I=" + i + " pierw_2(" + i + ")=" + pierwiastekDrugi + " pierw_4(" + i + ")=" + pierwiastekCzwartyWynik + "<br>");
-
-               
-                if ((i - dziennik + 1) % 3 === 0) {
-                    if (!confirm("Aby kontynuować, naciśnij dowolny klawisz.")) {
-                        break;
-}
- }
- }
- }
-        var numerWdzienniku = 8; 
-        drukujWyniki(numerWdzienniku);
-    </script>
+        const W = i ** 2 + i + 41;
+        buffer += "i=" + i + " w(" + i + ")=" + W + "<br><hr>";
+      }
+      field.innerHTML += buffer;
+    }
+  </script>
 </body>
 </html>
