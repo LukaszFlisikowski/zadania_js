@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-
+ <title> pętla w rysowaniu </title>
     <style>
         pre {
             font-family: monospace;
@@ -14,17 +14,12 @@
      
         var a_fli = (11 % 4) + 5; 
         var b_fli = (6 % 6) + 20; 
-
-       
         var result = '';
-
-       
         for (var i = 0; i < b_fli; i++) {
             result += '*';
         }
         result += '\n';
 
-        
         for (var i = 0; i < a_fli - 2; i++) {
             result += '*';
             for (var j = 0; j < b_fli - 2; j++) {
@@ -32,14 +27,11 @@
             }
             result += '*\n';
         }
-
-        
         for (var i = 0; i < b_fli; i++) {
             result += '*';
         }
         result += '\n';
 
-       
         document.write('<pre>' + result + '</pre>');
     </script>
 </body>
