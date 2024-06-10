@@ -1,42 +1,45 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-    <script type="text/javascript">
-        
-        var l1_t_fli = prompt("Podaj trzy litery swojego nazwiska:");
-        var l2_t_fli = prompt("Podaj trzy litery swojego nazwiska:");
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>petla w wiekszaniu tekstu</title>
+    </head>
+    <body>
+        <script>
+            let l1_t_fli = prompt("Podaj pierwszą liczbę z przedziału <20,60>:");
+            let l2_t_fli = prompt("Podaj drugą liczbę z przedziału <20,60>:");
+            let pocz_fli = prompt("Podaj początkową wielkość tekstu:");
+            let tekst_fli = prompt("Podaj tekst:");
 
-        
-        if (!(l1_t_fli >= 20 && l1_t_fli <= 60)) {
-            alert("Liczba l1 nie należy do przedziału <20,60>.");
-        }
-        if (!(l2_t_fli >= 20 && l2_t_fli <= 60)) {
-            alert("Liczba l2 nie należy do przedziału <20,60>.");
-        }
+            if (l1_t_fli < 20 || l1_t_fli > 60) {
+                document.write("Liczba l1 nie należy do przedziału <20,60>.");
+            } else if (l2_t_fli < 20 || l2_t_fli > 60) {
+                document.write("Liczba l2 nie należy do przedziału <20,60>.");
+            } else {
 
-        
-        var pocz_fli = prompt("Podaj wartość początkową wielkości tekstu:");
-      
-        var tekst_fli = prompt("Podaj dowolny tekst:");
-      
-        var repetitions = 0;
-        if (l1_t_fli < l2_t_fli) {
-            repetitions = Math.ceil((100 - pocz_fli) / 5);
-        } else if (l2_t_fli < l1_t_fli) {
-            repetitions = Math.ceil(pocz_fli / 5);
-        }
+                let repetitions;
+                if (l1_t_fli < l2_t_fli) {
+                    repetitions = Math.ceil((100 - pocz_fli) / 5);
+                } else if (l2_t_fli < l1_t_fli) {
+                    repetitions = Math.ceil(pocz_fli / 5);
+                } else {
+                    repetitions = 1;
+                }
 
-        if (repetitions <= 0) {
-            alert("Nie można zwiększyć ani zmniejszyć tekstu w podanym zakresie.");
-        } else {
-            
-            for (var i = pocz_fli; i <= 100 && i >= 0; i += (l1_t_fli < l2_t_fli) ? 5 : -5) {
-                document.write("<p style=\"font-size:" + i + "px; color: black;\"><br>" + tekst_fli + "<br></p>");
+                for (let i = pocz_fli; i <= 100 && i >= 0; l1_t_fli < l2_t_fli ? i += 5 : i -= 5) {
+                    if (i > 100) {
+                        document.write("Tekst jest większy od 100px.");
+                        break;
+                    } else if (i < 0) {
+                        document.write("Tekst jest mniejszy od 0px.");
+                        break;
+                    } else {
+                        document.write("<p style=\"font-size:" + i + "px; color: black;\"><br>" + tekst_fli + "<br></p>");
+                    }
+                    repetitions--;
+                    if (repetitions <= 0) break;
+                }
             }
-        }
-    </script>
-</body>
+
+        </script>
+    </body>
 </html>
