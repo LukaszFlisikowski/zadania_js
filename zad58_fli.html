@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <script>
+            let c1 = parseInt(prompt("Podaj liczbe 1:"));
+            let c2 = parseInt(prompt("Podaj liczbe 2:"));
+            function lWrite(c1, c2) {
+                let output = "";
+                let step;
+                if (c1 < c2) {
+                    step = 1;
+                } else if (c1> c2) {
+                    step = -1;
+                } else {
+                    alert("Podane liczby sa rowne");
+                    return;
+                }
+                for (let i = c1; (c1 < c2 ? i <= c2 : i >= c2); i += step) {
+                    if (i % 2 !== 0) {
+                        output += i + ", ";
+                    }
+                }
+                return output;
+            }
+            if (isNaN(c1) || isNaN(c2)) {
+                alert("Podano nieprawidlowe liczby");
+            } else {
+                let result = lWrite(c1, c2);
+                if (result) {
+                    let otvet1 = "<span style='font-size: 30px; 'color:green;'>" + "Liczby nieparzyste od " + c1 + " do " + c2 + ":\n" + result + "</span>";
+                    let otvet2 = "<span style='font-size: 15px; color:blue;'>" + "Liczby nieparzyste od " + c1 + " do " + c2 + ":\n" + result + "</span>";
+                    if (c1 < c2) {
+                        document.write(otvet1);
+                    } else {
+                        document.write(otvet2);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
