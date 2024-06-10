@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Liczby pierwsze z użyciem wzoru</title>
+  <meta charset="utf-8" />
+  <title>Liczby pierwsze</title>
 </head>
 <body>
-    <script type="text/javascript">
-        // Funkcja sprawdzająca czy liczba jest pierwsza
-        function czyPierwsza(liczba) {
-            if (liczba < 2) return false;
-            for (var i = 2; i <= Math.sqrt(liczba); i++) {
-                if (liczba % i === 0) return false;
-            }
-            return true;
+  <input id="btn" type="button" value="start" onclick="findPrimes()">
+  <div id="aa"></div>
+  <script>
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    async function findPrimes() {
+      const field = document.getElementById("aa");
+      let buffer = '';
+
+      for (let i = 0; i < 40; i++) {
+        if (i!== 0 && i % 5 === 0) {
+          await wait(300);
+          field.innerHTML += buffer;
+          buffer = '';
+          alert('Aby kontynuować, naciśnij dowolny klawisz');
         }
 
-        // Funkcja obliczająca wartość wielomianu
-        function wielomian(i) {
-            return i * i + i + 41;
-        }
+        const W = i ** 2 + i + 41;
+        buffer += "i=" + i + " w(" + i + ")=" + W + "<br>";
+      }
 
-        // Znalezienie 40 liczb pierwszych
-        var liczbyPierwsze = [];
-        var count = 0;
-        for (var i = 0; count < 40; i++) {
-            var wynik = wielomian(i);
-            if (czyPierwsza(wynik)) {
-                liczbyPierwsze.push({i: i, wynik: wynik});
-                count++;
-            }
-        }
-
+      field.innerHTML += buffer;
+    }
+  </script>
+</body>
+</html>
         // Wyświetlenie wyników zatrzymując ekran po pięciu liniach
         for (var i = 0; i < liczbyPierwsze.length; i++) {
             document.write("i=" + liczbyPierwsze[i].i + " w(" + liczbyPierwsze[i].i + ")=" + liczbyPierwsze[i].wynik + "<br>");
